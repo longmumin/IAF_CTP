@@ -1,0 +1,24 @@
+2015-07-30 11:21:36.211 INFO  [6060] - Adding transport CtpTransport
+2015-07-30 11:21:36.211 INFO  [6060] - Loading library CtpTransport
+2015-07-30 11:21:36.647 INFO  [6060] - Adding codec OmsCodec
+2015-07-30 11:21:36.647 INFO  [6060] - Loading library OmsCodec
+2015-07-30 11:21:36.663 ##### [6060] - Choosing default output queue interval of 0 because there are 8 CPUs
+2015-07-30 11:21:36.663 INFO  [6060] - Will log queue size every 5.000000 seconds
+2015-07-30 11:21:38.722 WARN  [6060] - IAF failed to connect to receiver on localhost:15903: Failed to connect to localhost:15903: 由于目标计算机积极拒绝，无法连接。
+
+2015-07-30 11:21:38.722 WARN  [6060] - Failed to connect to engine localhost:15903 due to error: Failed to connect to localhost:15903: 由于目标计算机积极拒绝，无法连接。
+
+2015-07-30 11:21:40.781 WARN  [6060] - IAF failed to connect to sender on localhost:15903: Failed to connect to localhost:15903: 由于目标计算机积极拒绝，无法连接。
+
+2015-07-30 11:21:40.781 ERROR [6060] - Failed to connect event on engine localhost:15903 due to error: Failed to connect to localhost:15903: 由于目标计算机积极拒绝，无法连接。
+
+2015-07-30 11:21:40.781 INFO  [6060] - Component ID: iaf (iaf/6177135765167586510/6177135765167586510)
+2015-07-30 11:21:40.781 INFO  [6060] - IAF running on port 16912
+2015-07-30 11:21:40.781 ##### [6060] - IAF v4.3.4.0, PDE 4.3.4.0 (build releases/4.3.x@174115 on ia32-win32-msvc9) started
+2015-07-30 11:21:40.781 ##### [6060] - Running as user 'Administrator'
+2015-07-30 11:21:40.781 ##### [6060] - Running on host 'PC201503241535'
+2015-07-30 11:21:40.781 ##### [6060] - Running on platform 'Windows 7 (Service Pack 1)'.
+2015-07-30 11:21:40.781 ##### [6060] - Running on CPU 'GenuineIntel family 6 model 10 stepping 7         Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz'.
+2015-07-30 11:21:40.781 ##### [6060] - Running with process Id 9260.
+2015-07-30 11:21:40.781 ##### [6060] - Running with 8150.12MB of physical memory.
+2015-07-30 11:21:41.015 CRIT  [6472] - Received a ctrl signal (CTRL_CLOSE_EVENT), shutting down

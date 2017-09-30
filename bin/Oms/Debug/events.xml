@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<static>
+	<codecs>
+		<codec name="OmsCodec" library="NullCodec">
+
+		</codec>
+	</codecs>
+	
+	<mapping>
+		<!-- upstream -->
+		<event name="ReqUserLogin" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqUserLogin" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="Password" transport="password" type="string" default="" />
+			</mapping-rules>
+		</event>
+
+		<event name="ReqUserLogout" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqUserLogout" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+ 				<map apama="BrokerId" transport="brokerId" type="string" default="" /> 
+				<map apama="UserId" transport="userId" type="string" default="" />	
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+
+		<event name="ReqOrderInsert" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqOrderInsert" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />	
+			</mapping-rules>
+		</event>
+		<event name="ReqParkedOrderInsert" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqParkedOrderInsert" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ParkedOrderId" transport="parkedOrderId" type="string" default="" />
+				<map apama="UserType" transport="userType" type="string" default="" />
+				<map apama="Status" transport="status" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqParkedOrderAction" package="com.nanhua.omsCTP"
+					direction="upstream" encoder="OmsCodec"
+					copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqParkedOrderAction" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ActionFlag" transport="actionFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ParkedOrderActionId" transport="parkedOrderActionId" type="string" default="" />
+				<map apama="UserType" transport="userType" type="string" default="" />
+				<map apama="Status" transport="status" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />			
+			</mapping-rules>
+		</event>
+		<event name="ReqOrderAction" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqOrderAction" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ActionFlag" transport="actionFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQueryMaxOrderVolume" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQueryMaxOrderVolume" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="OffsetFlag" transport="offsetFlag" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="MaxVolume" transport="maxVolume" type="integer" default="-1" />	
+			</mapping-rules>
+		</event>
+		<event name="ReqQrySettlementInfoConfirm" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQrySettlementInfoConfirm" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryOrder" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryOrder" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="InsertTimeStart" transport="insertTimeStart" type="string" default="" />
+				<map apama="InsertTimeEnd" transport="insertTimeEnd" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryTrade" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryTrade" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="TradeId" transport="tradeId" type="string" default="" />
+				<map apama="TradeTimeStart" transport="tradeTimeStart" type="string" default="" />
+				<map apama="TradeTimeEnd" transport="tradeTimeEnd" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInvestorPosition" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInvestorPosition" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryTradingAccount" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryTradingAccount" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInvestor" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInvestor" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryTradingCode" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryTradingCode" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="ClientIdType" transport="clientIdType" type="string" default="" />	
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInstrumentMarginRate" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInstrumentMarginRate" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInstrumentCommissionRate" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInstrumentCommissionRate" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryExchange" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryExchange" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />	
+				<map apama="InvestorId" transport="investorId" type="string" default="" />				
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInstrument" package="com.nanhua.omsCTP" direction="upstream"
+			encoder="OmsCodec" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInstrument" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="ProductId" transport="productId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryDepthMarketData" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryDepthMarketData" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQrySettlementInfo" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQrySettlementInfo" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />	
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInvestorPositionDetail" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInvestorPositionDetail" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqSettlementInfoConfirm" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqSettlementInfoConfirm" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ConfirmDate" transport="confirmDate" type="string" default="" />
+				<map apama="ConfirmTime" transport="confirmTime" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryInvestorPositionCombineDetail" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryInvestorPositionCombineDetail" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="CombInstrumentId" transport="combInstrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryEWarrantOffset" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryEWarrantOffset" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryTradingNotice" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryTradingNotice" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryBrokerTradingParams" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryBrokerTradingParams" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="QryBrokerTradingAlgos" package="com.nanhua.omsCTP"
+			direction="upstream" encoder="OmsCodec"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="QryBrokerTradingAlgos" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqRemoveParkedOrder" package="com.nanhua.omsCTP"
+					direction="upstream" encoder="OmsCodec"
+					copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqRemoveParkedOrder" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ParkedOrderId" transport="parkedOrderId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqRemoveParkedOrderAction" package="com.nanhua.omsCTP"
+					direction="upstream" encoder="OmsCodec"
+					copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqRemoveParkedOrderAction" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ParkedOrderActionId" transport="parkedOrderActionId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryParkedOrder" package="com.nanhua.omsCTP"
+					direction="upstream" encoder="OmsCodec"
+					copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryParkedOrder" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqQryParkedOrderAction" package="com.nanhua.omsCTP"
+					direction="upstream" encoder="OmsCodec"
+					copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqQryParkedOrderAction" />
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+			</mapping-rules>
+		</event>
+
+		<!-- downstream -->
+		<event name="OnFrontConnected" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnFrontConnected" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+			
+			</mapping-rules>
+		</event>
+		<event name="OnFrontDisconnected" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnFrontDisconnected" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="Reason" transport="reason" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnHeartBeatWarning" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnHeartBeatWarning" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="TimeLapse" transport="timeLapse" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspUserLogin" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspUserLogin" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="LoginTime" transport="loginTime" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="SystemName" transport="systemName" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="MaxOrderRef" transport="maxOrderRef" type="string" default="" />
+				<map apama="SHFETime" transport="shfeTime" type="string" default="" />
+				<map apama="DCEtime" transport="dceTime" type="string" default="" />
+				<map apama="CZCETime" transport="czceTime" type="string" default="" />
+				<map apama="FFEXTime" transport="ffexTime" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspUserLogout" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspUserLogout" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspOrderInsert" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspOrderInsert" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspParkedOrderInsert" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspParkedOrderInsert" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default=""/>
+				<map apama="InvestorId" transport="investorId" type="string" default=""/>
+				<map apama="InstrumentId" transport="instrumentId" type="string" default=""/>
+				<map apama="OrderRef" transport="orderRef" type="string" default=""/>
+				<map apama="UserId" transport="userId" type="string" default=""/>
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default=""/>
+				<map apama="Direction" transport="direction" type="string" default=""/>
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default=""/>
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default=""/>
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0"/>
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1"/>
+				<map apama="TimeCondition" transport="timeCondition" type="string" default=""/>
+				<map apama="GTDDate" transport="gtdDate" type="string" default=""/>
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default=""/>
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1"/>
+				<map apama="ContigentCondition" transport="contigentCondition" type="string" default=""/>
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0"/>
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default=""/>
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1"/>
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default=""/>
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1"/>
+				<map apama="ExchangeId" transport="exchangeId" type="string" default=""/>
+				<map apama="ParkedOrderId" transport="parkedOrderId" type="string" default=""/>
+				<map apama="UserType" transport="userType" type="string" default=""/>
+				<map apama="Status" transport="status" type="string" default=""/>
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1"/>
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default=""/>
+				<map apama="IsLast" transport="isLast" type="string" default=""/>
+			</mapping-rules>
+		</event>
+		<event name="OnRspParkedOrderAction" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspParkedOrderAction" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default=""/>
+				<map apama="InvestorId" transport="investorId" type="string" default=""/>
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1"/>
+				<map apama="OrderRef" transport="orderRef" type="string" default=""/>
+				<map apama="FrontId" transport="frontId" type="integer" default="-1"/>
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1"/>
+				<map apama="ExchangeId" transport="exchangeId" type="string" default=""/>
+				<map apama="OrderSysId" transport="orderSysId" type="string" default=""/>
+				<map apama="ActionFlag" transport="actionFlag" type="string" default=""/>
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0"/>
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1"/>
+				<map apama="UserId" transport="userId" type="string" default=""/>
+				<map apama="InstrumentId" transport="instrumentId" type="string" default=""/>
+				<map apama="ParkedOrderActionId" transport="parkedOrderActionId" type="string" default=""/>
+				<map apama="UserType" transport="userType" type="string" default=""/>
+				<map apama="Status" transport="status" type="string" default=""/>
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1"/>
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default=""/>
+				<map apama="IsLast" transport="isLast" type="string" default=""/>
+			</mapping-rules>
+		</event>
+		<event name="OnRspOrderAction" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspOrderAction" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ActionFlag" transport="actionFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQueryMaxOrderVolume" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQueryMaxOrderVolume" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="OffsetFlag" transport="offsetFlag" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="MaxVolume" transport="maxVolume" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspSettlementInfoConfirm" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspSettlementInfoConfirm" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ConfirmDate" transport="confirmDate" type="string" default="" />
+				<map apama="ConfirmTime" transport="confirmTime" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspRemoveParkedOrder" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspRemoveParkedOrder" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ParkedOrderId" transport="parkedOrderId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspRemoveParkedOrderAction" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspRemoveParkedOrderAction" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ParkedOrderActionId" transport="parkedOrderActionId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryOrder" package="com.nanhua.omsCTP" direction="downstream"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryOrder" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="OrderLocalId" transport="orderLocalId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ParticipantId" transport="participantId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="TraderId" transport="traderId" type="string" default="" />
+				<map apama="InstallId" transport="installId" type="integer" default="-1" />
+				<map apama="OrderSubmitStatus" transport="orderSubmitStatus" type="string" default="" />
+				<map apama="NotifySequence" transport="notifySequence" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="OrderSource" transport="orderSource" type="string" default="" />
+				<map apama="OrderStatus" transport="orderStatus" type="string" default="" />
+				<map apama="OrderType" transport="orderType" type="string" default="" />
+				<map apama="VolumeTraded" transport="volumeTraded" type="integer" default="-1" />
+				<map apama="VolumeTotal" transport="volumeTotal" type="integer" default="-1" />
+				<map apama="InsertDate" transport="insertDate" type="string" default="" />
+				<map apama="InsertTime" transport="insertTime" type="string" default="" />
+				<map apama="ActiveTime" transport="activeTime" type="string" default="" />
+				<map apama="SuspendTime" transport="suspendTime" type="string" default="" />
+				<map apama="UpdateTime" transport="updateTime" type="string" default="" />
+				<map apama="CancelTime" transport="cancelTime" type="string" default="" />
+				<map apama="ActiveTraderId" transport="activeTraderId" type="string" default="" />
+				<map apama="ClearingPartId" transport="clearingPartId" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="UserProductInfo" transport="userProductInfo" type="string" default="" />
+				<map apama="StatusMsg" transport="statusMsg" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ActiveUserId" transport="activeUserId" type="string" default="" />
+				<map apama="BrokerOrderSeq" transport="brokerOrderSeq" type="integer" default="-1" />
+				<map apama="RelativeOrderSysId" transport="relativeOrderSysId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryTrade" package="com.nanhua.omsCTP" direction="downstream"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryTrade" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="TradeId" transport="tradeId" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ParticipantId" transport="participantId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="TradingRole" transport="tradingRole" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="OffsetFlag" transport="offsetFlag" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="Price" transport="price" type="float" default="-1.0" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="TradeDate" transport="tradeDate" type="string" default="" />
+				<map apama="TradeTime" transport="tradeTime" type="string" default="" />
+				<map apama="TradeType" transport="tradeType" type="string" default="" />
+				<map apama="PriceSource" transport="priceSource" type="string" default="" />
+				<map apama="TraderId" transport="traderId" type="string" default="" />
+				<map apama="OrderLocalId" transport="orderLocalId" type="string" default="" />
+				<map apama="ClearingPartId" transport="clearingPartId" type="string" default="" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="BrokerOrderSeq" transport="brokerOrderSeq" type="integer" default="-1" />
+				<map apama="TradeSource" transport="tradeSource" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInvestorPosition" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInvestorPosition" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="PosiDirection" transport="posiDirection" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="PositionDate" transport="positionDate" type="string" default="" />
+				<map apama="YdPosition" transport="ydPosition" type="integer" default="-1" />
+				<map apama="Position" transport="position" type="integer" default="-1" />
+				<map apama="LongFrozen" transport="longFrozen" type="integer" default="-1" />
+				<map apama="ShortFrozen" transport="shortFrozen" type="integer" default="-1" />
+				<map apama="LongFrozenAmount" transport="longFrozenAmount" type="float" default="-1.0" />
+				<map apama="ShortFrozenAmount" transport="shortFrozenAmount" type="float" default="-1.0" />
+				<map apama="OpenVolume" transport="openVolume" type="integer" default="-1" />
+				<map apama="CloseVolume" transport="closeVolume" type="integer" default="-1" />
+				<map apama="OpenAmount" transport="openAmount" type="float" default="-1.0" />
+				<map apama="CloseAmount" transport="closeAmount" type="float" default="-1.0" />
+				<map apama="PositionCost" transport="positionCost" type="float" default="-1.0" />
+				<map apama="PreMargin" transport="preMargin" type="float" default="-1.0" />
+				<map apama="UseMargin" transport="useMargin" type="float" default="-1.0" />
+				<map apama="FrozenMargin" transport="frozenMargin" type="float" default="-1.0" />
+				<map apama="FrozenCash" transport="frozenCash" type="float" default="-1.0" />
+				<map apama="FrozenCommission" transport="frozenCommission" type="float" default="-1.0" />
+				<map apama="CashIn" transport="cashIn" type="float" default="-1.0" />
+				<map apama="Commission" transport="commission" type="float" default="-1.0" />
+				<map apama="CloseProfit" transport="closeProfit" type="float" default="-1.0" />
+				<map apama="PositionProfit" transport="positionProfit" type="float" default="-1.0" />
+				<map apama="PreSettlementPrice" transport="preSettlementPrice" type="float" default="-1.0" />
+				<map apama="SettlementPrice" transport="settlementPrice" type="float" default="-1.0" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="OpenCost" transport="openCost" type="float" default="-1.0" />
+				<map apama="ExchangeMargin" transport="exchangeMargin" type="float" default="-1.0" />
+				<map apama="CombPosition" transport="combPosition" type="integer" default="-1" />
+				<map apama="CombLongFrozen" transport="combLongFrozen" type="float" default="-1.0" />
+				<map apama="CombShortFrozen" transport="combShortFrozen" type="float" default="-1.0" />
+				<map apama="CloseProfitByDate" transport="closeProfitByDate" type="float" default="-1.0" />
+				<map apama="CloseProfitByTrade" transport="closeProfitByTrade" type="float" default="-1.0" />
+				<map apama="TodayPosition" transport="todayPosition" type="integer" default="-1" />
+				<map apama="MarginRateByMoney" transport="marginRateByMoney" type="float" default="-1.0" />
+				<map apama="MarginRateByVolume" transport="marginRateByVolume" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryTradingAccount" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryTradingAccount" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="AccountId" transport="accountId" type="string" default="" />
+				<map apama="PreMortgage" transport="preMortgage" type="float" default="-1.0" />
+				<map apama="PreCredit" transport="preCredit" type="float" default="-1.0" />
+				<map apama="PreDeposit" transport="preDeposit" type="float" default="-1.0" />
+				<map apama="PreBalance" transport="preBalance" type="float" default="-1.0" />
+				<map apama="PreMargin" transport="preMargin" type="float" default="-1.0" />
+				<map apama="InterestBase" transport="interestBase" type="float" default="-1.0" />
+				<map apama="Interest" transport="interest" type="float" default="-1.0" />
+				<map apama="Deposit" transport="deposit" type="float" default="-1.0" />
+				<map apama="Withdraw" transport="withdraw" type="float" default="-1.0" />
+				<map apama="FrozenMargin" transport="frozenMargin" type="float" default="-1.0" />
+				<map apama="FrozenCash" transport="frozenCash" type="float" default="-1.0" />
+				<map apama="FrozenCommission" transport="frozenCommission" type="float" default="-1.0" />
+				<map apama="CurrMargin" transport="currMargin" type="float" default="-1.0" />
+				<map apama="CashIn" transport="cashIn" type="float" default="-1.0" />
+				<map apama="Commission" transport="commission" type="float" default="-1.0" />
+				<map apama="CloseProfit" transport="closeProfit" type="float" default="-1.0" />
+				<map apama="PositionProfit" transport="positionProfit" type="float" default="-1.0" />
+				<map apama="Balance" transport="balance" type="float" default="-1.0" />
+				<map apama="Available" transport="available" type="float" default="-1.0" />
+				<map apama="WithdrawQuota" transport="withdrawQuota" type="float" default="-1.0" />
+				<map apama="Reserve" transport="reserve" type="float" default="-1.0" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="Credit" transport="credit" type="float" default="-1.0" />
+				<map apama="Mortgage" transport="mortgage" type="float" default="-1.0" />
+				<map apama="ExchangeMargin" transport="exchangeMargin" type="float" default="-1.0" />
+				<map apama="DeliveryMargin" transport="deliveryMargin" type="float" default="-1.0" />
+				<map apama="ExchangeDeliveryMargin" transport="exchangeDeliveryMargin" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInvestor" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInvestor" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorGroupId" transport="investorGroupId" type="string" default="" />
+				<map apama="InvestorName" transport="investorName" type="string" default="" />
+				<map apama="IdentifiedCardType" transport="identifiedCardType" type="string" default="" />
+				<map apama="IdentifiedCardNo" transport="identifiedCardNo" type="string" default="" />
+				<map apama="IsActive" transport="isActive" type="integer" default="-1" />
+				<map apama="Telephone" transport="telephone" type="string" default="" />
+				<map apama="Address" transport="address" type="string" default="" />
+				<map apama="OpenDate" transport="openDate" type="string" default="" />
+				<map apama="Mobile" transport="mobile" type="string" default="" />
+				<map apama="CommModelId" transport="commModelId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryTradingCode" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryTradingCode" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="IsActive" transport="isActive" type="integer" default="-1" />
+				<map apama="ClientIdType" transport="clientIdType" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+			<event name="OnRspQryInstrumentMarginRate" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInstrumentMarginRate" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="InvestorRange" transport="investorRange" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="LongMarginRatioByMoney" transport="longMarginRatioByMoney" type="float" default="-1.0" />
+				<map apama="LongMarginRatioByVolume" transport="longMarginRatioByVolume" type="float" default="-1.0" />
+				<map apama="ShortMarginRatioByMoney" transport="shortMarginRatioByMoney" type="float" default="-1.0" />
+				<map apama="ShortMarginRatioByVolume" transport="shortMarginRatioByVolume" type="float" default="-1.0" />
+				<map apama="IsRelative" transport="isRelative" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInstrumentCommissionRate" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInstrumentCommissionRate" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="InvestorRange" transport="investorRange" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="OpenRatioByMoney" transport="openRatioByMoney" type="float" default="-1.0" />
+				<map apama="OpenRatioByVolume" transport="openRatioByVolume" type="float" default="-1.0" />
+				<map apama="CloseRatioByMoney" transport="closeRatioByMoney" type="float" default="-1.0" />
+				<map apama="CloseRatioByVolume" transport="closeRatioByVolume" type="float" default="-1.0" />
+				<map apama="CloseTodayRatioByMoney" transport="closeTodayRatioByMoney" type="float" default="-1.0" />
+				<map apama="CloseTodayRatioByVolume" transport="closeTodayRatioByVolume" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryExchange" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryExchange" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ExchangeName" transport="exchangeName" type="string" default="" />
+				<map apama="ExchangeProperty" transport="exchangeProperty" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInstrument" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInstrument" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="InstrumentName" transport="instrumentName" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="ProductId" transport="productId" type="string" default="" />
+				<map apama="ProductClass" transport="productClass" type="string" default="" />
+				<map apama="DeliveryYear" transport="deliveryYear" type="integer" default="-1" />
+				<map apama="DeliveryMonth" transport="deliveryMonth" type="integer" default="-1" />
+				<map apama="MaxMarketOrderVolume" transport="maxMarketOrderVolume" type="integer" default="-1" />
+				<map apama="MinMarketOrderVolume" transport="minMarketOrderVolume" type="integer" default="-1" />
+				<map apama="MaxLimitOrderVolume" transport="maxLimitOrderVolume" type="integer" default="-1" />
+				<map apama="MinLimitOrderVolume" transport="minLimitOrderVolume" type="integer" default="-1" />
+				<map apama="VolumeMultiple" transport="volumeMultiple" type="integer" default="-1" />
+				<map apama="PriceTick" transport="priceTick" type="float" default="-1.0" />
+				<map apama="CreateDate" transport="createDate" type="string" default="" />
+				<map apama="OpenDate" transport="openDate" type="string" default="" />
+				<map apama="ExpireDate" transport="expireDate" type="string" default="" />
+				<map apama="StartDelivDate" transport="startDelivDate" type="string" default="" />
+				<map apama="EndDelivDate" transport="endDelivDate" type="string" default="" />
+				<map apama="InstLifePhase" transport="instLifePhase" type="string" default="" />
+				<map apama="IsTrading" transport="isTrading" type="integer" default="-1" />
+				<map apama="PositionType" transport="positionType" type="string" default="" />
+				<map apama="PositionDateType" transport="positionDateType" type="string" default="" />
+				<map apama="LongMarginRatio" transport="longMarginRatio" type="float" default="-1.0" />
+				<map apama="ShortMarginRatio" transport="shortMarginRatio" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryDepthMarketData" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryDepthMarketData" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="LastPrice" transport="lastPrice" type="float" default="-1.0" />
+				<map apama="PreSettlementPrice" transport="preSettlementPrice" type="float" default="-1.0" />
+				<map apama="PreClosePrice" transport="preClosePrice" type="float" default="-1.0" />
+				<map apama="PreOpenInterest" transport="preOpenInterest" type="float" default="-1.0" />
+				<map apama="OpenPrice" transport="openPrice" type="float" default="-1.0" />
+				<map apama="HighestPrice" transport="highestPrice" type="float" default="-1.0" />
+				<map apama="LowestPrice" transport="lowestPrice" type="float" default="-1.0" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="Turnover" transport="turnover" type="float" default="-1.0" />
+				<map apama="OpenInterest" transport="openInterest" type="float" default="-1.0" />
+				<map apama="ClosePrice" transport="closePrice" type="float" default="-1.0" />
+				<map apama="SettlementPrice" transport="settlementPrice" type="float" default="-1.0" />
+				<map apama="UpperLimitPrice" transport="upperLimitPrice" type="float" default="-1.0" />
+				<map apama="LowerLimitPrice" transport="lowerLimitPrice" type="float" default="-1.0" />
+				<map apama="PreDelta" transport="preDelta" type="float" default="-1.0" />
+				<map apama="CurrDelta" transport="currDelta" type="float" default="-1.0" />
+				<map apama="UpdateTime" transport="updateTime" type="string" default="" />
+				<map apama="UpdateMillisec" transport="updateMillisec" type="integer" default="-1" />
+				<map apama="BidPrice1" transport="bidPrice1" type="float" default="-1.0" />
+				<map apama="BidVolume1" transport="bidVolume1" type="integer" default="-1" />
+				<map apama="AskPrice1" transport="askPrice1" type="float" default="-1.0" />
+				<map apama="AskVolume1" transport="askVolume1" type="integer" default="-1" />
+				<map apama="BidPrice2" transport="bidPrice2" type="float" default="-1.0" />
+				<map apama="BidVolume2" transport="bidVolume2" type="integer" default="-1" />
+				<map apama="AskPrice2" transport="askPrice2" type="float" default="-1.0" />
+				<map apama="AskVolume2" transport="askVolume2" type="integer" default="-1" />
+				<map apama="BidPrice3" transport="bidPrice3" type="float" default="-1.0" />
+				<map apama="BidVolume3" transport="bidVolume3" type="integer" default="-1" />
+				<map apama="AskPrice3" transport="askPrice3" type="float" default="-1.0" />
+				<map apama="AskVolume3" transport="askVolume3" type="integer" default="-1" />
+				<map apama="BidPrice4" transport="bidPrice4" type="float" default="-1.0" />
+				<map apama="BidVolume4" transport="bidVolume4" type="integer" default="-1" />
+				<map apama="AskPrice4" transport="askPrice4" type="float" default="-1.0" />
+				<map apama="AskVolume4" transport="askVolume4" type="integer" default="-1" />
+				<map apama="BidPrice5" transport="bidPrice5" type="float" default="-1.0" />
+				<map apama="BidVolume5" transport="bidVolume5" type="integer" default="-1" />
+				<map apama="AskPrice5" transport="askPrice5" type="float" default="-1.0" />
+				<map apama="AskVolume5" transport="askVolume5" type="integer" default="-1" />
+				<map apama="AveragePrice" transport="averagePrice" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQrySettlementInfo" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQrySettlementInfo" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="Content" transport="content" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInvestorPositionDetail" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInvestorPositionDetail" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="OpenDate" transport="openDate" type="string" default="" />
+				<map apama="TradeId" transport="tradeId" type="string" default="" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="OpenPrice" transport="openPrice" type="float" default="-1.0" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="TradeType" transport="tradeType" type="string" default="" />
+				<map apama="CombInstrumentId" transport="combInstrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="CloseProfitByDate" transport="closeProfitByDate" type="float" default="-1.0" />
+				<map apama="CloseProfitByTrade" transport="closeProfitByTrade" type="float" default="-1.0" />
+				<map apama="PositionProfitByDate" transport="positionProfitByDate" type="float" default="-1.0" />
+				<map apama="PositionProfitByTrade" transport="positionProfitByTrade" type="float" default="-1.0" />
+				<map apama="Margin" transport="margin" type="float" default="-1.0" />
+				<map apama="ExchMargin" transport="exchMargin" type="float" default="-1.0" />
+				<map apama="MarginRateByMoney" transport="marginRateByMoney" type="float" default="-1.0" />
+				<map apama="MarginRateByVolume" transport="marginRateByVolume" type="float" default="-1.0" />
+				<map apama="LastSettlementPrice" transport="lastSettlementPrice" type="float" default="-1.0" />
+				<map apama="SettlementPrice" transport="settlementPrice" type="float" default="-1.0" />
+				<map apama="CloseVolume" transport="closeVolume" type="float" default="-1.0" />
+				<map apama="CloseAmount" transport="closeAmount" type="float" default="-1.0" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQrySettlementInfoConfirm" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQrySettlementInfoConfirm" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ConfirmDate" transport="confirmDate" type="string" default="" />
+				<map apama="ConfirmTime" transport="confirmTime" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryInvestorPositionCombineDetail" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryInvestorPositionCombineDetail" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="OpenDate" transport="openDate" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ComTradeId" transport="comTradeId" type="string" default="" />
+				<map apama="TradeId" transport="tradeId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="TotalAmt" transport="totalAmt" type="integer" default="-1" />
+				<map apama="Margin" transport="margin" type="float" default="-1.0" />
+				<map apama="ExchMargin" transport="exchMargin" type="float" default="-1.0" />
+				<map apama="MarginRateByMoney" transport="marginRateByMoney" type="float" default="-1.0" />
+				<map apama="MarginRateByVolume" transport="marginRateByVolume" type="float" default="-1.0" />
+				<map apama="LegId" transport="legId" type="integer" default="-1" />
+				<map apama="LegMultiple" transport="legMultiple" type="integer" default="-1" />
+				<map apama="CombInstrumentId" transport="combInstrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryEWarrantOffset" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryEWarrantOffset" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspError" package="com.nanhua.omsCTP" direction="downstream"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspError" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRtnOrder" package="com.nanhua.omsCTP" direction="downstream"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRtnOrder" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="OrderLocalId" transport="orderLocalId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ParticipantId" transport="participantId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="TraderId" transport="traderId" type="string" default="" />
+				<map apama="InstallId" transport="installId" type="integer" default="-1" />
+				<map apama="OrderSubmitStatus" transport="orderSubmitStatus" type="string" default="" />
+				<map apama="NotifySequence" transport="notifySequence" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="OrderSource" transport="orderSource" type="string" default="" />
+				<map apama="OrderStatus" transport="orderStatus" type="string" default="" />
+				<map apama="OrderType" transport="orderType" type="string" default="" />
+				<map apama="VolumeTraded" transport="volumeTraded" type="integer" default="-1" />
+				<map apama="VolumeTotal" transport="volumeTotal" type="integer" default="-1" />
+				<map apama="InsertDate" transport="insertDate" type="string" default="" />
+				<map apama="InsertTime" transport="insertTime" type="string" default="" />
+				<map apama="ActiveTime" transport="activeTime" type="string" default="" />
+				<map apama="SuspendTime" transport="suspendTime" type="string" default="" />
+				<map apama="UpdateTime" transport="updateTime" type="string" default="" />
+				<map apama="CancelTime" transport="cancelTime" type="string" default="" />
+				<map apama="ActiveTraderId" transport="activeTraderId" type="string" default="" />
+				<map apama="ClearingPartId" transport="clearingPartId" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="UserProductInfo" transport="userProductInfo" type="string" default="" />
+				<map apama="StatusMsg" transport="statusMsg" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ActiveUserId" transport="activeUserId" type="string" default="" />
+				<map apama="BrokerOrderSeq" transport="brokerOrderSeq" type="integer" default="-1" />
+				<map apama="RelativeOrderSysId" transport="relativeOrderSysId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRtnTrade" package="com.nanhua.omsCTP" direction="downstream"
+			copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRtnTrade" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="TradeId" transport="tradeId" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ParticipantId" transport="participantId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="TradingRole" transport="tradingRole" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="OffsetFlag" transport="offsetFlag" type="string" default="" />
+				<map apama="HedgeFlag" transport="hedgeFlag" type="string" default="" />
+				<map apama="Price" transport="price" type="float" default="-1.0" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="TradeDate" transport="tradeDate" type="string" default="" />
+				<map apama="TradeTime" transport="tradeTime" type="string" default="" />
+				<map apama="TradeType" transport="tradeType" type="string" default="" />
+				<map apama="PriceSource" transport="priceSource" type="string" default="" />
+				<map apama="TraderId" transport="traderId" type="string" default="" />
+				<map apama="OrderLocalId" transport="orderLocalId" type="string" default="" />
+				<map apama="ClearingPartId" transport="clearingPartId" type="string" default="" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="SettlementId" transport="settlementId" type="integer" default="-1" />
+				<map apama="BrokerOrderSeq" transport="brokerOrderSeq" type="integer" default="-1" />
+				<map apama="TradeSource" transport="tradeSource" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnErrRtnOrderInsert" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnErrRtnOrderInsert" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnErrRtnOrderAction" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnErrRtnOrderAction" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1" />
+				<map apama="OrderRef" transport="orderRef" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="OrderSysId" transport="orderSysId" type="string" default="" />
+				<map apama="ActionFlag" transport="actionFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1" />
+				<map apama="ActionDate" transport="actionDate" type="string" default="" />
+				<map apama="ActionTime" transport="actionTime" type="string" default="" />
+				<map apama="TraderId" transport="traderId" type="string" default="" />
+				<map apama="InstallId" transport="installId" type="integer" default="-1" />
+				<map apama="OrderLocalId" transport="orderLocalId" type="string" default="" />
+				<map apama="ActionLocalId" transport="actionLocalId" type="string" default="" />
+				<map apama="ParticipantId" transport="participantId" type="string" default="" />
+				<map apama="ClientId" transport="clientId" type="string" default="" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="OrderActionStatus" transport="orderActionStatus" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="StatusMsg" transport="statusMsg" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRtnInstrumentStatus" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRtnInstrumentStatus" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="SettlementGroupId" transport="settlementGroupId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="InstrumentStatus" transport="instrumentStatus" type="string" default="" />
+				<map apama="TradingSegmentSN" transport="tradingSegmentSN" type="integer" default="-1" />
+				<map apama="EnterTime" transport="enterTime" type="string" default="" />
+				<map apama="EnterReason" transport="enterReason" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRtnTradingNotice" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRtnTradingNotice" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="SendTime" transport="sendTime" type="string" default="" />
+				<map apama="FieldContent" transport="fieldContent" type="string" default="" />
+				<map apama="SequenceSeries" transport="sequenceSeries" type="integer" default="-1" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryParkedOrder" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryParkedOrder" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default=""/>
+				<map apama="InvestorId" transport="investorId" type="string" default=""/>
+				<map apama="InstrumentId" transport="instrumentId" type="string" default=""/>
+				<map apama="OrderRef" transport="orderRef" type="string" default=""/>
+				<map apama="UserId" transport="userId" type="string" default=""/>
+				<map apama="OrderPriceType" transport="orderPriceType" type="string" default="" />
+				<map apama="Direction" transport="direction" type="string" default="" />
+				<map apama="CombOffsetFlag" transport="combOffsetFlag" type="string" default="" />
+				<map apama="CombHedgeFlag" transport="combHedgeFlag" type="string" default="" />
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0" />
+				<map apama="VolumeTotalOriginal" transport="volumeTotalOriginal" type="integer" default="-1" />
+				<map apama="TimeCondition" transport="timeCondition" type="string" default="" />
+				<map apama="GTDDate" transport="gtdDate" type="string" default="" />
+				<map apama="VolumeCondition" transport="volumeCondition" type="string" default="" />
+				<map apama="MinVolume" transport="minVolume" type="integer" default="-1" />
+				<map apama="ContingentCondition" transport="contingentCondition" type="string" default="" />
+				<map apama="StopPrice" transport="stopPrice" type="float" default="-1.0" />
+				<map apama="ForceCloseReason" transport="forceCloseReason" type="string" default="" />
+				<map apama="IsAutoSuspend" transport="isAutoSuspend" type="integer" default="-1" />
+				<map apama="BusinessUnit" transport="businessUnit" type="string" default="" />
+				<map apama="UserForceClose" transport="userForceClose" type="integer" default="-1" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ParkedOrderId" transport="parkedOrderId" type="string" default="" />
+				<map apama="UserType" transport="userType" type="string" default="" />
+				<map apama="Status" transport="status" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default=""/>
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryParkedOrderAction" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryParkedOrderAction" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default=""/>
+				<map apama="InvestorId" transport="investorId" type="string" default=""/>
+				<map apama="OrderActionRef" transport="orderActionRef" type="integer" default="-1"/>
+				<map apama="OrderRef" transport="orderRef" type="string" default=""/>
+				<map apama="FrontId" transport="frontId" type="integer" default="-1"/>
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1"/>
+				<map apama="ExchangeId" transport="exchangeId" type="string" default=""/>
+				<map apama="OrderSysId" transport="orderSysId" type="string" default=""/>
+				<map apama="ActionFlag" transport="actionFlag" type="string" default=""/>
+				<map apama="LimitPrice" transport="limitPrice" type="float" default="-1.0"/>
+				<map apama="VolumeChange" transport="volumeChange" type="integer" default="-1"/>
+				<map apama="UserId" transport="userId" type="string" default=""/>
+				<map apama="InstrumentId" transport="instrumentId" type="string" default=""/>
+				<map apama="ParkedOrderActionId" transport="parkedOrderActionId" type="string" default=""/>
+				<map apama="UserType" transport="userType" type="string" default=""/>
+				<map apama="Status" transport="status" type="string" default=""/>
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1"/>
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default=""/>
+				<map apama="IsLast" transport="isLast" type="string" default=""/>
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryTradingNotice" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryTradingNotice" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorRange" transport="investorRange" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="SequenceSeries" transport="sequenceSeries" type="integer" default="-1" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="SendTime" transport="sendTime" type="string" default="" />
+				<map apama="SequenceNo" transport="sequenceNo" type="integer" default="-1" />
+				<map apama="FieldContent" transport="fieldContent" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryBrokerTradingParams" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryBrokerTradingParams" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="Algorithm" transport="algorithm" type="string" default="" />
+				<map apama="AvailIncludeCloseProfit" transport="availIncludeCloseProfit" type="float" default="-1.0" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="InvestorId" transport="investorId" type="string" default="" />
+				<map apama="MarginPriceType" transport="marginPriceType" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspQryBrokerTradingAlgos" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspQryBrokerTradingAlgos" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="FindMarginRateAlgoId" transport="findMarginRateAlgoId" type="string" default="" />
+				<map apama="HandlePositionAlgoId" transport="handlePositionAlgoId" type="string" default="" />
+				<map apama="HandleTradingAccountAlgoId" transport="handleTradingAccountAlgoId" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnReqError" package="com.nanhua.omsCTP"
+			direction="downstream" copyUnmappedToDictionaryPayload="false">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnReqError" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+			</mapping-rules>
+		</event>
+	</mapping>
+</static>
+

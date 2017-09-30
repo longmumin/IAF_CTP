@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<adapter-config xmlns:xi="http://www.w3.org/2001/XInclude">
+	<logging level="INFO" file="iaf_md_ctp.log">
+		<upstream-events level="INFO" />
+		<downstream-events level="INFO" />
+	</logging>
+	<plugin-logging level="INFO" file="plugin_md_ctp.log" />
+
+	<transports>
+		<transport name="CTPTransport" library="MdCTPAdapter">
+			<property name="broker" value="1008" />
+			<property name="url" value="tcp://115.238.106.252:41213" />
+		</transport>
+	</transports>
+	<codecs>
+		<codec name="MdCodec" library="NullCodec">
+
+		</codec>
+	</codecs>
+	<mapping>
+		<!-- upstream -->
+		
+		<event name="ReqUserLogin" package="com.nanhua.mdCTP" encoder="MdCodec" direction="upstream">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqUserLogin" />
+				<map apama="RequestId" transport="requestId" type="integer" default= "-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="Password" transport="password" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="ReqUserLogout" package="com.nanhua.mdCTP" encoder="MdCodec" direction="upstream">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="ReqUserLogout" />
+				<map apama="RequestId" transport="requestId" type="integer" default= "-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="SubscribeMarketData" package="com.nanhua.mdCTP" encoder="MdCodec" direction="upstream">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="SubscribeMarketData" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="UnSubscribeMarketData" package="com.nanhua.mdCTP" encoder="MdCodec" direction="upstream">
+			<id-rules>
+				<upstream />
+			</id-rules>
+			<mapping-rules>
+				<map transport="Type" type="string" default="UnSubscribeMarketData" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+			</mapping-rules>
+		</event>
+		
+		<!-- downstream -->
+		<event name="OnFrontConnected" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnFrontConnected" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+			</mapping-rules>
+		</event>
+		<event name="OnFrontDisconnected" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnFrontDisconnected" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="Reason" transport="reason" type="integer" default="0" />
+			</mapping-rules>
+		</event>
+		<event name="OnHeartBeatWarning" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnHeartBeatWarning" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="TimeLapse" transport="timeLapse" type="integer" default="0" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspUserLogin" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspUserLogin" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default= "-1"/>
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="LoginTime" transport="loginTime" type="string" default="" />
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="SystemName" transport="systemName" type="string" default="" />
+				<map apama="FrontId" transport="frontId" type="integer" default="-1" />
+				<map apama="SessionId" transport="sessionId" type="integer" default="-1" />
+				<map apama="MaxOrderRef" transport="maxOrderRef" type="string" default="" />
+				<map apama="SHFETime" transport="shfeTime" type="string" default="" />
+				<map apama="DCETime" transport="dceTime" type="string" default="" />
+				<map apama="CZCETime" transport="czceTime" type="string" default="" />
+				<map apama="FFEXTime" transport="ffexTime" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspUserLogout" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspUserLogout" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default= "-1"/>
+				<map apama="BrokerId" transport="brokerId" type="string" default="" />
+				<map apama="UserId" transport="userId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspError" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspError" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default= "-1"/>
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspSubMarketData" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspSubMarketData" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRspUnSubMarketData" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRspUnSubMarketData" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="RequestId" transport="requestId" type="integer" default="-1" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ErrorId" transport="errorId" type="integer" default="-1" />
+				<map apama="ErrorMsg" transport="errorMsg" type="string" default="" />
+				<map apama="IsLast" transport="isLast" type="string" default="" />
+			</mapping-rules>
+		</event>
+		<event name="OnRtnDepthMarketData" package="com.nanhua.mdCTP" encoder="MdCodec" direction="downstream">
+			<id-rules>
+				<downstream>
+					<id fields="Type" test="==" value="OnRtnDepthMarketData" />
+				</downstream>
+			</id-rules>
+			<mapping-rules>
+				<map apama="TradingDay" transport="tradingDay" type="string" default="" />
+				<map apama="InstrumentId" transport="instrumentId" type="string" default="" />
+				<map apama="ExchangeId" transport="exchangeId" type="string" default="" />
+				<map apama="ExchangeInstId" transport="exchangeInstId" type="string" default="" />
+				<map apama="LastPrice" transport="lastPrice" type="float" default="-1.0" />
+				<map apama="PreSettlementPrice" transport="preSettlementPrice" type="float" default="-1.0" />
+				<map apama="PreClosePrice" transport="preClosePrice" type="float" default="-1.0" />
+				<map apama="PreOpenInterest" transport="preOpenInterest" type="float" default="-1.0" />
+				<map apama="OpenPrice" transport="openPrice" type="float" default="-1.0" />
+				<map apama="HighestPrice" transport="highestPrice" type="float" default="-1.0" />
+				<map apama="LowestPrice" transport="lowestPrice" type="float" default="-1.0" />
+				<map apama="Volume" transport="volume" type="integer" default="-1" />
+				<map apama="Turnover" transport="turnover" type="float" default="-1.0" />
+				<map apama="OpenInterest" transport="openInterest" type="float" default="-1.0" />
+				<map apama="ClosePrice" transport="closePrice" type="float" default="-1.0" />
+				<map apama="SettlementPrice" transport="settlementPrice" type="float" default="-1.0" />
+				<map apama="UpperLimitPrice" transport="upperLimitPrice" type="float" default="-1.0" />
+				<map apama="LowerLimitPrice" transport="lowerLimitPrice" type="float" default="-1.0" />
+				<map apama="PreDelta" transport="preDelta" type="float" default="-1.0" />
+				<map apama="CurrDelta" transport="currDelta" type="float" default="-1.0" />
+				<map apama="UpdateTime" transport="updateTime" type="string" default="" />
+				<map apama="UpdateMillisec" transport="updateMillisec" type="integer" default="-1" />
+				<map apama="BidPrice1" transport="bidPrice1" type="float" default="-1.0" />
+				<map apama="BidVolume1" transport="bidVolume1" type="integer" default="-1" />
+				<map apama="AskPrice1" transport="askPrice1" type="float" default="-1.0" />
+				<map apama="AskVolume1" transport="askVolume1" type="integer" default="-1" />			
+				<map apama="BidPrice2" transport="bidPrice2" type="float" default="-1.0" />
+				<map apama="BidVolume2" transport="bidVolume2" type="integer" default="-1" />
+				<map apama="AskPrice2" transport="askPrice2" type="float" default="-1.0" />
+				<map apama="AskVolume2" transport="askVolume2" type="integer" default="-1" />			
+				<map apama="BidPrice3" transport="bidPrice3" type="float" default="-1.0" />
+				<map apama="BidVolume3" transport="bidVolume3" type="integer" default="-1" />
+				<map apama="AskPrice3" transport="askPrice3" type="float" default="-1.0" />
+				<map apama="AskVolume3" transport="askVolume3" type="integer" default="-1" />			
+				<map apama="BidPrice4" transport="bidPrice4" type="float" default="-1.0" />
+				<map apama="BidVolume4" transport="bidVolume4" type="integer" default="-1" />
+				<map apama="AskPrice4" transport="askPrice4" type="float" default="-1.0" />
+				<map apama="AskVolume4" transport="askVolume4" type="integer" default="-1" />	
+				<map apama="BidPrice5" transport="bidPrice5" type="float" default="-1.0" />
+				<map apama="BidVolume5" transport="bidVolume5" type="integer" default="-1" />
+				<map apama="AskPrice5" transport="askPrice5" type="float" default="-1.0" />
+				<map apama="AskVolume5" transport="askVolume5" type="integer" default="-1" />
+				<map apama="AveragePrice" transport="averagePrice" type="float" default="-1.0" />
+			</mapping-rules>
+		</event>		
+	</mapping>
+	<apama>
+		<sinks>
+			<sink host="localhost" port="15903" />
+		</sinks>
+		<sources>
+			<source host="localhost" port="15903" channels="MD_CTP_CHANNEL" />
+		</sources>
+	</apama>
+</adapter-config>

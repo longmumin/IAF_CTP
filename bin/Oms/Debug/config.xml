@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<adapter-config xmlns:xi="http://www.w3.org/2001/XInclude">
+	<logging level="INFO" file="iaf_oms_ctp.log">
+		<upstream-events level="INFO" />
+		<downstream-events level="INFO" />
+	</logging>
+	<plugin-logging level="INFO" file="plugin_oms_ctp.log" />
+
+	<transports>
+		<transport name="CtpTransport" library="OmsCTPAdapter">
+			<property name="broker" value="1008" />
+			<property name="url" value="tcp://115.238.106.252:41205" />
+		</transport>
+	</transports>
+    <xi:include href="events.xml" xpointer="xpointer(/static/codecs)"/>
+    <xi:include href="events.xml" xpointer="xpointer(/static/mapping)"/>
+
+	<apama>
+		<sinks>
+			<sink host="localhost" port="15903" />
+		</sinks>
+		<sources>
+			<source host="localhost" port="15903" channels="OMS_CTP_CHANNEL" />
+		</sources>
+	</apama>
+</adapter-config>

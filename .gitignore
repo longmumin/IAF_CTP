@@ -3,3 +3,8 @@
 ################################################################################
 
 /build_win32_vc2005/Release
+/bin/Oms/Release
+/build_win32_vc2005/.vs/IAF_CTP/v14
+/build_win32_vc2005/IAF_CtpTrade/Release/IAF_CtpTrade.tlog
+/build_win32_vc2005/IAF_CtpTrade/Release
+/build_win32_vc2005

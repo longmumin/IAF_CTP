@@ -59,7 +59,7 @@
 #define SOCKET_CLOSE(__SOCKET__) closesocket(__SOCKET__)
 #define SOCKET_IS_INVALID(__SOC__) (__SOC__ == INVALID_SOCKET)
 
-#define snprintf _snprintf
+//#define snprintf _snprintf
 
 #elif defined(_APBUILD_UNIX_ALL__) || defined(__unix__)
 
